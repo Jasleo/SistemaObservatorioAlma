@@ -5,14 +5,12 @@ package model.bd;
  * @author dumbo
  */
 public class CuerpoCeleste {
-    
-    
     private int id;
     private String nombre;
     private float masa;
     private float tamaño;
     private int idEstrellaFK;
-    private int idTiposDeCuerposMenorFK;
+    private int idTipoDeCuerpoMenorFK;
 
     public int getId() {
         return id;
@@ -54,13 +52,12 @@ public class CuerpoCeleste {
         this.idEstrellaFK = idEstrellaFK;
     }
 
-    public int getIdTiposDeCuerposMenorFK() {
-        return idTiposDeCuerposMenorFK;
+    public int getIdTipoDeCuerpoMenorFK() {
+        return idTipoDeCuerpoMenorFK;
     }
 
-    public void setIdTiposDeCuerposMenorFK(int idTiposDeCuerposMenorFK) {
-        this.idTiposDeCuerposMenorFK = idTiposDeCuerposMenorFK;
+    public void setIdTipoDeCuerpoMenorFK(int idTipoDeCuerpoMenorFK) {
+        this.idTipoDeCuerpoMenorFK = idTipoDeCuerpoMenorFK;
     }
 
-    
 }

@@ -11,7 +11,11 @@
         <br>
         <a href="crearSatelite.jsp">Creacion Satelite</a>
         <br>
-        <a href="creacionSistemaCompleto.jsp">Crear Sistema Completo(No Completa)</a>
+        <a href="crearCuerpoCeleste.jsp">CrearCuerpoCeleste</a>
+        <br>
+        <a href="crearTipoCuerpoCeleste.jsp">CrearTipoCuerpoCeleste</a>
+        <br>
+        <a href="creacionSistemaCompleto.jsp">Crear Sistema Completo(No Completa/Prueba)</a>
 
 
     </body>

@@ -4,6 +4,9 @@
     Author     : dumbo
 --%>
 
+<%@page import="model.bd.TipoDeCuerpoMenor"%>
+<%@page import="model.bd.TipoDePlaneta"%>
+<%@page import="model.bd.Data"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

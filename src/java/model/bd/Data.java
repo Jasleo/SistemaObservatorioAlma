@@ -102,7 +102,7 @@ public class Data {
 
     public void crearCuerpoCeleste(CuerpoCeleste cc) throws SQLException {
         query = "INSERT INTO estrella VALUE(null,'" + cc.getNombre() + "','" + cc.getMasa() + "','" + cc.getTamaño()
-                + "','" + cc.getIdEstrellaFK() + "','" + cc.getIdTiposDeCuerposMenorFK() + "')";
+                + "','" + cc.getIdEstrellaFK() + "','" + cc.getIdTipoDeCuerpoMenorFK() + "')";
 
         con.ejecutar(query);
     }
@@ -138,6 +138,25 @@ public class Data {
             tcm.setId(rs.getInt(1));
             tcm.setNombre(rs.getString(2));
             list.add(tcm);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<Estrella> getEstrella() throws SQLException {
+        List<Estrella> list = new ArrayList<>();
+
+        query = "SELECT * FROM estrella;";
+        rs = con.ejecutarSelect(query);
+
+        Estrella est;
+
+        while (rs.next()) {
+            est = new Estrella();
+            est.setId(rs.getInt(1));
+            est.setNombre(rs.getString(2));
+            list.add(est);
         }
         con.close();
 
@@ -238,5 +257,4 @@ public class Data {
         return list;
     }
 
-    
 }
