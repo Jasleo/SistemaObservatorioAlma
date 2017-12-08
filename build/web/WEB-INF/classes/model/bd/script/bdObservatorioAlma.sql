@@ -52,7 +52,6 @@ CREATE TABLE planeta(
     composiciónAtmosfera VARCHAR(20) ,
     idEstrellaFK INT,
     idTipoDePLanetaFK INT,
-    imagen BLOB,
     PRIMARY KEY (id),
     FOREIGN KEY (idEstrellaFK) REFERENCES estrella(id),
     FOREIGN KEY (idTipoDePLanetaFK) REFERENCES tipoDePlaneta(id)
@@ -66,7 +65,6 @@ CREATE TABLE satelite(
     peridoOrbitalHora FLOAT ,
     peridoOrbitalMInuto FLOAT,
     idPlanetaFK INT,
-    imagen BLOB,
     PRIMARY KEY (id),
     FOREIGN KEY (idPlanetaFK) REFERENCES planeta(id)
 );
