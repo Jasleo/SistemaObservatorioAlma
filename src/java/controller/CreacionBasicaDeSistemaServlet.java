@@ -43,9 +43,9 @@ public class CreacionBasicaDeSistemaServlet extends HttpServlet {
             nuevoPlaneta.setRadioOrbital(Float.parseFloat(request.getParameter("txtRadioOrbitalPlaneta")));
 
             nuevoPlaneta.setPeriodoOrbital(Float.parseFloat(request.getParameter("txtPeriodoOrbitalPlaneta")));
-            nuevoPlaneta.setPeriodoDeRotación(Float.parseFloat(request.getParameter("txtPeriodoDeRotacionPlaneta")));
+            nuevoPlaneta.setPeriodoDeRotacion(Float.parseFloat(request.getParameter("txtPeriodoDeRotacionPlaneta")));
 
-            nuevoPlaneta.setComposiciónAtmosfera(request.getParameter("txtComposiciónAtmosferaPlaneta"));
+            nuevoPlaneta.setComposicionAtmosfera(request.getParameter("txtComposiciónAtmosferaPlaneta"));
             
             System.out.println();
 

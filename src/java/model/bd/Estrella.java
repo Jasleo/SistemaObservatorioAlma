@@ -1,9 +1,5 @@
 package model.bd;
 
-/**
- *
- * @author dumbo
- */
 public class Estrella {
     private int id;
     private String nombre;

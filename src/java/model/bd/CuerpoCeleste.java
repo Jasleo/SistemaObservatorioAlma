@@ -8,7 +8,7 @@ public class CuerpoCeleste {
     private int id;
     private String nombre;
     private float masa;
-    private float tamaño;
+    private float tamano;
     private int idEstrellaFK;
     private int idTipoDeCuerpoMenorFK;
 
@@ -36,12 +36,12 @@ public class CuerpoCeleste {
         this.masa = masa;
     }
 
-    public float getTamaño() {
-        return tamaño;
+    public float getTamano() {
+        return tamano;
     }
 
-    public void setTamaño(float tamaño) {
-        this.tamaño = tamaño;
+    public void setTamano(float tamano) {
+        this.tamano = tamano;
     }
 
     public int getIdEstrellaFK() {

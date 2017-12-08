@@ -34,7 +34,7 @@
             Tipo de De Cuerpo Menor :
             <select name="cboTipoDeCuerpoMenor">
                 <%
-                    for (TipoDeCuerpoMenor tcm : new Data().getTipoDeCuerpoCeleste()) {
+                    for (TipoDeCuerpoMenor tcm : new Data().getTipoDeCuerpoMenor()) {
                         out.println("<option value='" + tcm.getId() + "'>" + tcm.getNombre() + "</option>");
                     }
                 %>

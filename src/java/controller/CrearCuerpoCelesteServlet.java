@@ -31,8 +31,8 @@ public class CrearCuerpoCelesteServlet extends HttpServlet {
             CuerpoCeleste nuevoCuerpoCeleste = new CuerpoCeleste();
 
             nuevoCuerpoCeleste.setNombre(request.getParameter("txtNombreCuerpoCeleste"));
-            nuevoCuerpoCeleste.setMasa(Float.parseFloat(request.getParameter("txtDiametroSatelite")));
-            nuevoCuerpoCeleste.setTamaño(Float.parseFloat(request.getParameter("txtPeridoOrbitalDiaSatelite")));
+            nuevoCuerpoCeleste.setMasa(Float.parseFloat(request.getParameter("txtMasaCuerpoCeleste")));
+            nuevoCuerpoCeleste.setTamano(Float.parseFloat(request.getParameter("txtTamanoCuerpoCeleste")));
 
             nuevoCuerpoCeleste.setIdEstrellaFK(Integer.parseInt(request.getParameter("cboEstrella")));
             nuevoCuerpoCeleste.setIdTipoDeCuerpoMenorFK(Integer.parseInt(request.getParameter("cboTipoDeCuerpoMenor")));

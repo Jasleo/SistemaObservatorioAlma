@@ -1,12 +1,5 @@
 package model.bd;
 
-import java.sql.Blob;
-import java.sql.Timestamp;
-
-/**
- *
- * @author dumbo
- */
 public class Planeta {
 
     private int id;
@@ -16,8 +9,8 @@ public class Planeta {
     private float masa;
     private float radioOrbital;
     private float periodoOrbital;
-    private float periodoDeRotación;
-    private String composiciónAtmosfera;
+    private float periodoDeRotacion;
+    private String composicionAtmosfera;
     private int idEstrellaFK;
     private int idTipoDePlanetaFK;
 
@@ -77,20 +70,20 @@ public class Planeta {
         this.periodoOrbital = periodoOrbital;
     }
 
-    public float getPeriodoDeRotación() {
-        return periodoDeRotación;
+    public float getPeriodoDeRotacion() {
+        return periodoDeRotacion;
     }
 
-    public void setPeriodoDeRotación(float periodoDeRotación) {
-        this.periodoDeRotación = periodoDeRotación;
+    public void setPeriodoDeRotacion(float periodoDeRotacion) {
+        this.periodoDeRotacion = periodoDeRotacion;
     }
 
-    public String getComposiciónAtmosfera() {
-        return composiciónAtmosfera;
+    public String getComposicionAtmosfera() {
+        return composicionAtmosfera;
     }
 
-    public void setComposiciónAtmosfera(String composiciónAtmosfera) {
-        this.composiciónAtmosfera = composiciónAtmosfera;
+    public void setComposicionAtmosfera(String composicionAtmosfera) {
+        this.composicionAtmosfera = composicionAtmosfera;
     }
 
     public int getIdEstrellaFK() {
