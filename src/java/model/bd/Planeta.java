@@ -20,7 +20,6 @@ public class Planeta {
     private String composiciónAtmosfera;
     private int idEstrellaFK;
     private int idTipoDePlanetaFK;
-    private Blob imagen;
 
     public int getId() {
         return id;
@@ -110,16 +109,4 @@ public class Planeta {
         this.idTipoDePlanetaFK = idTipoDePlanetaFK;
     }
 
-    public Blob getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(Blob imagen) {
-        this.imagen = imagen;
-    }
-
-    
-
-    
-    
 }

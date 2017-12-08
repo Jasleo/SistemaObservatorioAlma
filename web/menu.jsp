@@ -9,6 +9,8 @@
         <h1>MENU Observatorio Alma</h1>
         <a href="creacionBasicaDeSistema.jsp">Creacion Sistema Basica</a>
         <br>
+        <a href="crearSatelite.jsp">Creacion Satelite</a>
+        <br>
         <a href="creacionSistemaCompleto.jsp">Crear Sistema Completo(No Completa)</a>
 
 

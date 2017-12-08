@@ -1,5 +1,7 @@
 package controller;
 
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -13,51 +15,40 @@ import javax.servlet.http.HttpServletResponse;
 import model.bd.Data;
 import model.bd.Estrella;
 import model.bd.Planeta;
+import model.bd.Satelite;
 import model.bd.SistemaPlanetario;
 
 /**
  *
  * @author dumbo
  */
-@WebServlet(name = "CreacionBasicaDeSistemaServlet", urlPatterns = {"/creacionBasicaDeSistema.do"})
-public class CreacionBasicaDeSistemaServlet extends HttpServlet {
+@WebServlet(name = "CrearSateliteServlet", urlPatterns = {"/crearSatelite.do"})
+public class CrearSateliteServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             Data d = new Data();
 
-            SistemaPlanetario nuevoSistemaPlanetario = new SistemaPlanetario();
-            Estrella nuevaEstrella = new Estrella();
-            Planeta nuevoPlaneta = new Planeta();
-
-            nuevoSistemaPlanetario.setNombre(request.getParameter("txtSistemaPlanetario"));
-            nuevaEstrella.setNombre(request.getParameter("txtEstrella"));
-
-            nuevoPlaneta.setNombre(request.getParameter("txtNombrePlaneta"));
-            nuevoPlaneta.setSimbologia(request.getParameter("txtSimbologiaPlaneta"));
+            Satelite nuevoSatelite = new Satelite();
             
-            nuevoPlaneta.setDiametroEcuatorial(Float.parseFloat(request.getParameter("txtDiametroEcuatorialPlaneta")));
-            nuevoPlaneta.setMasa(Float.parseFloat(request.getParameter("txtMasaPlaneta")));
-            nuevoPlaneta.setRadioOrbital(Float.parseFloat(request.getParameter("txtRadioOrbitalPlaneta")));
-
-            nuevoPlaneta.setPeriodoOrbital(Float.parseFloat(request.getParameter("txtPeriodoOrbitalPlaneta")));
-            nuevoPlaneta.setPeriodoDeRotación(Float.parseFloat(request.getParameter("txtPeriodoDeRotacionPlaneta")));
-
-            nuevoPlaneta.setComposiciónAtmosfera(request.getParameter("txtComposiciónAtmosferaPlaneta"));
+            nuevoSatelite.setNombre(request.getParameter("txtNombreDeSatelite"));
+            nuevoSatelite.setDiametro(Float.parseFloat(request.getParameter("txtDiametroSatelite")));
+            nuevoSatelite.setPeridoOrbitalDia(Float.parseFloat(request.getParameter("txtPeridoOrbitalDiaSatelite")));
+            nuevoSatelite.setPeridoOrbitalHora(Float.parseFloat(request.getParameter("txtPeridoOrbitalHoraSatelite")));
+            nuevoSatelite.setPeridoOrbitalMInuto(Float.parseFloat(request.getParameter("txtPeridoOrbitalMInutoSatelite")));
             
-            System.out.println();
-
-            nuevoPlaneta.setIdTipoDePlanetaFK(Integer.parseInt(request.getParameter("cboTipoDePlaneta")));
-
-            d.creacionBasica(nuevoSistemaPlanetario, nuevaEstrella, nuevoPlaneta);
+            nuevoSatelite.setIdPlanetaFK(Integer.parseInt(request.getParameter("cboPlaneta")));
+            
+            
             response.sendRedirect("menu.jsp");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CreacionBasicaDeSistemaServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CrearSateliteServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CreacionBasicaDeSistemaServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CrearSateliteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

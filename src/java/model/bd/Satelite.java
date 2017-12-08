@@ -12,11 +12,10 @@ public class Satelite {
     private int id;
     private String nombre;
     private float diametro;
-    private Timestamp peridoOrbitalDia;
-    private Timestamp peridoOrbitalHora;
-    private Timestamp peridoOrbitalMInuto;
+    private float peridoOrbitalDia;
+    private float peridoOrbitalHora;
+    private float peridoOrbitalMInuto;
     private int idPlanetaFK;
-    private Blob imagen;
 
     public int getId() {
         return id;
@@ -42,27 +41,27 @@ public class Satelite {
         this.diametro = diametro;
     }
 
-    public Timestamp getPeridoOrbitalDia() {
+    public float getPeridoOrbitalDia() {
         return peridoOrbitalDia;
     }
 
-    public void setPeridoOrbitalDia(Timestamp peridoOrbitalDia) {
+    public void setPeridoOrbitalDia(float peridoOrbitalDia) {
         this.peridoOrbitalDia = peridoOrbitalDia;
     }
 
-    public Timestamp getPeridoOrbitalHora() {
+    public float getPeridoOrbitalHora() {
         return peridoOrbitalHora;
     }
 
-    public void setPeridoOrbitalHora(Timestamp peridoOrbitalHora) {
+    public void setPeridoOrbitalHora(float peridoOrbitalHora) {
         this.peridoOrbitalHora = peridoOrbitalHora;
     }
 
-    public Timestamp getPeridoOrbitalMInuto() {
+    public float getPeridoOrbitalMInuto() {
         return peridoOrbitalMInuto;
     }
 
-    public void setPeridoOrbitalMInuto(Timestamp peridoOrbitalMInuto) {
+    public void setPeridoOrbitalMInuto(float peridoOrbitalMInuto) {
         this.peridoOrbitalMInuto = peridoOrbitalMInuto;
     }
 
@@ -73,15 +72,5 @@ public class Satelite {
     public void setIdPlanetaFK(int idPlanetaFK) {
         this.idPlanetaFK = idPlanetaFK;
     }
-
-    public Blob getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(Blob imagen) {
-        this.imagen = imagen;
-    }
-    
-    
 
 }

@@ -60,7 +60,7 @@
             <br>
             Periodo De Rotación del Planeta:
             <br>
-            <input name="txtPeriodoDeRotaciónPlaneta" type="number" step="any" placeholder="Se Representan en Año  EJ :1,5" required="required">
+            <input name="txtPeriodoDeRotacionPlaneta" type="number" step="any" placeholder="Se Representan en Año  EJ :1,5" required="required">
             <br>
             Composición Atmosfera Planeta: :
             <br>

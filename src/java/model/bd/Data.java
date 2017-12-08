@@ -147,7 +147,7 @@ public class Data {
     public void crearPlaneta(Planeta p) throws SQLException {
         query = "INSERT INTO planeta VALUE(null,'" + p.getNombre() + "','" + p.getSimbologia() + "','" + p.getDiametroEcuatorial()
                 + "','" + p.getMasa() + "','" + p.getRadioOrbital() + "','" + p.getPeriodoOrbital() + "','" + p.getPeriodoDeRotación() + "',"
-                + "'" + p.getComposiciónAtmosfera() + "','" + p.getIdEstrellaFK() + "','" + p.getIdTipoDePlanetaFK() + "','" + p.getImagen() + "')";
+                + "'" + p.getComposiciónAtmosfera() + "','" + p.getIdEstrellaFK() + "','" + p.getIdTipoDePlanetaFK() + "' )";
 
         con.ejecutar(query);
     }
@@ -168,7 +168,7 @@ public class Data {
 
     public void crearSatelite(Satelite s) throws SQLException {
         query = "INSERT INTO satelite VALUE(null,'" + s.getNombre() + "','" + s.getDiametro() + "','" + s.getPeridoOrbitalDia()
-                + "','" + s.getPeridoOrbitalHora() + "','" + s.getPeridoOrbitalMInuto() + "'','" + s.getIdPlanetaFK() + "'','" + s.getImagen() + "')";
+                + "','" + s.getPeridoOrbitalHora() + "','" + s.getPeridoOrbitalMInuto() + "'','" + s.getIdPlanetaFK() + "'')";
 
         con.ejecutar(query);
     }
@@ -213,7 +213,6 @@ public class Data {
             seps.setPeriodoOrbitalPlaneta(rs.getFloat(10));
             seps.setPeriodoDeRotaciónPlaneta(rs.getFloat(11));
             seps.setComposiciónAtmosfera(rs.getString(12));
-            
 
             listSistemaPlanterioBasico.add(seps);
         }
@@ -221,4 +220,23 @@ public class Data {
         return listSistemaPlanterioBasico;
     }
 
+    public List<Planeta> getPlaneta() throws SQLException {
+        List<Planeta> list = new ArrayList<>();
+        query = "SELECT * FROM Planeta;";
+        rs = con.ejecutarSelect(query);
+
+        Planeta p;
+
+        while (rs.next()) {
+            p = new Planeta();
+            p.setId(rs.getInt(1));
+            p.setNombre(rs.getString(2));
+            list.add(p);
+        }
+        con.close();
+
+        return list;
+    }
+
+    
 }
