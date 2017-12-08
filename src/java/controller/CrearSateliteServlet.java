@@ -42,6 +42,7 @@ public class CrearSateliteServlet extends HttpServlet {
             
             nuevoSatelite.setIdPlanetaFK(Integer.parseInt(request.getParameter("cboPlaneta")));
             
+            d.crearSatelite(nuevoSatelite);
             
             response.sendRedirect("menu.jsp");
             

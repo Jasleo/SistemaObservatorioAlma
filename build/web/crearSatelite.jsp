@@ -45,6 +45,11 @@
                     }
                 %>
             </select>  
+             <br>
+            <button type="submit"> Ingresar</button>
+        </form>
+        <form action="cerrar.do" method="post">
+            <button type="submit" >Cerrar sesión</button>
         </form>
     </body>
 </html>
