@@ -34,7 +34,7 @@
                     out.println("<td>" + sat.getPeridoOrbitalDia() + "</td>");
                     out.println("<td>" + sat.getPeridoOrbitalHora() + "</td>");
                     out.println("<td>" + sat.getPeridoOrbitalMInuto() + "</td>");
-                    out.println("<td>" + d.getPlanetaBy(String.valueOf(sat.getIdPlanetaFK())) + "</td>");
+                    out.println("<td>" + d.getPlanetaById(String.valueOf(sat.getIdPlanetaFK())) + "</td>");
                     out.println("</tr>");
                 }
             %>

@@ -239,7 +239,7 @@ public class Data {
     }
 
     //READ nombre
-    public String getPlanetaBy(String idPlaneta) throws SQLException {
+    public String getPlanetaById(String idPlaneta) throws SQLException {
         query = "SELECT nombre FROM planeta WHERE id = " + idPlaneta + ";";
         String nombre = null;
         rs = con.ejecutarSelect(query);
@@ -328,6 +328,157 @@ public class Data {
 
         con.close();
         return nombre;
+    }
+
+    //READ nombre filtro
+    public List<SistemaPlanetario> getSistemaPlanetarioByNombre(String nombreSistemaPlanetario) throws SQLException {
+        List<SistemaPlanetario> list = new ArrayList<>();
+
+        query = "SELECT * FROM sistemaPlanetario WHERE nombre  LIKE % " + nombreSistemaPlanetario + "%;";
+        rs = con.ejecutarSelect(query);
+
+        SistemaPlanetario est;
+
+        while (rs.next()) {
+            est = new SistemaPlanetario();
+            est.setId(rs.getInt(1));
+            est.setNombre(rs.getString(2));
+            list.add(est);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<Estrella> getEstrellaByNombre(String nombreEstrella) throws SQLException {
+        List<Estrella> list = new ArrayList<>();
+
+        query = "SELECT * FROM estrella WHERE nombre  LIKE % " + nombreEstrella + "%;";
+        rs = con.ejecutarSelect(query);
+
+        Estrella est;
+
+        while (rs.next()) {
+            est = new Estrella();
+            est.setId(rs.getInt(1));
+            est.setNombre(rs.getString(2));
+            est.setIdSistemaPlanetarioFK(3);
+            list.add(est);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<TipoDeCuerpoMenor> getTipoDeCuerpoMenorByNombre(String nombreTipoDeCuerpoMenor) throws SQLException {
+        List<TipoDeCuerpoMenor> list = new ArrayList<>();
+
+        query = "SELECT * FROM tipoDeCuerpoMenor WHERE nombre  LIKE % " + nombreTipoDeCuerpoMenor + "%;";
+        rs = con.ejecutarSelect(query);
+
+        TipoDeCuerpoMenor tcm;
+
+        while (rs.next()) {
+            tcm = new TipoDeCuerpoMenor();
+            tcm.setId(rs.getInt(1));
+            tcm.setNombre(rs.getString(2));
+            list.add(tcm);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<CuerpoCeleste> getCuerpoCelestesByNombre(String nombreCuerpoCeleste) throws SQLException {
+        List<CuerpoCeleste> list = new ArrayList<>();
+        query = "SELECT * FROM cuerpoCeleste WHERE nombre  LIKE % " + nombreCuerpoCeleste + "%;";
+        rs = con.ejecutarSelect(query);
+
+        CuerpoCeleste cc;
+
+        while (rs.next()) {
+            cc = new CuerpoCeleste();
+            cc.setId(rs.getInt(1));
+            cc.setNombre(rs.getString(2));
+            cc.setMasa(rs.getFloat(3));
+            cc.setTamano(rs.getFloat(4));
+            cc.setIdEstrellaFK(rs.getInt(5));
+            cc.setIdTipoDeCuerpoMenorFK(rs.getInt(6));
+            list.add(cc);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<TipoDePlaneta> getTipoDePlanetaByNombre(String nombreTipoDePlaneta) throws SQLException {
+        List<TipoDePlaneta> list = new ArrayList<>();
+        query = "SELECT * FROM tipoDePlaneta WHERE nombre  LIKE % " + nombreTipoDePlaneta + "%;";
+        rs = con.ejecutarSelect(query);
+
+        TipoDePlaneta tp;
+
+        while (rs.next()) {
+            tp = new TipoDePlaneta();
+            tp.setId(rs.getInt(1));
+            tp.setNombre(rs.getString(2));
+            list.add(tp);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<Planeta> getPlanetaByNombre(String nombrePlaneta) throws SQLException {
+        List<Planeta> list = new ArrayList<>();
+        query = "SELECT * FROM planeta WHERE nombre  LIKE % " + nombrePlaneta + "%;";
+        rs = con.ejecutarSelect(query);
+
+        Planeta p;
+
+        while (rs.next()) {
+            p = new Planeta();
+            p.setId(rs.getInt(1));
+            p.setNombre(rs.getString(2));
+            p.setSimbologia(rs.getString(3));
+            p.setDiametroEcuatorial(rs.getFloat(4));
+            p.setMasa(rs.getFloat(5));
+            p.setRadioOrbital(rs.getFloat(6));
+            p.setPeriodoOrbital(rs.getFloat(7));
+            p.setPeriodoDeRotacion(rs.getFloat(8));
+            p.setComposicionAtmosfera(rs.getString(9));
+            p.setIdEstrellaFK(rs.getInt(10));
+            p.setIdTipoDePlanetaFK(rs.getInt(11));
+
+            list.add(p);
+        }
+        con.close();
+
+        return list;
+    }
+
+    public List<Satelite> getSateliteByNombre(String nombreSatelite) throws SQLException {
+        List<Satelite> list = new ArrayList<>();
+        query = "SELECT * FROM satelite WHERE nombre  LIKE % " + nombreSatelite + "%;";
+        rs = con.ejecutarSelect(query);
+
+        Satelite s;
+
+        while (rs.next()) {
+            s = new Satelite();
+            s.setId(rs.getInt(1));
+            s.setNombre(rs.getString(2));
+            s.setDiametro(rs.getFloat(3));
+            s.setPeridoOrbitalDia(rs.getFloat(4));
+            s.setPeridoOrbitalHora(rs.getFloat(5));
+            s.setPeridoOrbitalMInuto(rs.getFloat(6));
+            s.setIdPlanetaFK(rs.getInt(7));
+
+            list.add(s);
+        }
+        con.close();
+
+        return list;
     }
 
     // UPDATE
