@@ -88,7 +88,7 @@ public class Data {
     }
 
     // READ 
-    public List<SistemaPlanetario> getSistemaPlanetarios() throws SQLException {
+    public List<SistemaPlanetario> getSistemaPlanetario() throws SQLException {
         List<SistemaPlanetario> list = new ArrayList<>();
 
         query = "SELECT * FROM sistemaPlanetario;";
@@ -236,6 +236,98 @@ public class Data {
         con.close();
 
         return list;
+    }
+
+    //READ nombre
+    public String getPlanetaBy(String idPlaneta) throws SQLException {
+        query = "SELECT nombre FROM planeta WHERE id = " + idPlaneta + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getSistemaPlanetarioBy(String idSistemaPlanetario) throws SQLException {
+        query = "SELECT nombre FROM sistemaPlanetario WHERE id = " + idSistemaPlanetario + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getEstrellaBy(String idEstrella) throws SQLException {
+        query = "SELECT nombre FROM estrella WHERE id = " + idEstrella + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getCuerpoCelesteBy(String idCuerpoCeleste) throws SQLException {
+        query = "SELECT nombre FROM cuerpoCeleste WHERE id = " + idCuerpoCeleste + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getTipoDeCuerpoMenorBy(String idTipoDeCuerpoMenor) throws SQLException {
+        query = "SELECT nombre FROM tipoDeCuerpoMenor WHERE id = " + idTipoDeCuerpoMenor + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getTipoDePlanetaBy(String idTipoDePlaneta) throws SQLException {
+        query = "SELECT nombre FROM tipoDePlaneta WHERE id = " + idTipoDePlaneta + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
+    }
+
+    public String getSateliteBy(String idSatelite) throws SQLException {
+        query = "SELECT nombre FROM satelite WHERE id = " + idSatelite + ";";
+        String nombre = null;
+        rs = con.ejecutarSelect(query);
+
+        if (rs.next()) {
+            nombre = rs.getString(1);
+        }
+
+        con.close();
+        return nombre;
     }
 
     // UPDATE
