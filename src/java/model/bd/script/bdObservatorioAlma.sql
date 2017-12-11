@@ -2,6 +2,9 @@ CREATE DATABASE bdAlmaAstrologia;
 
 USE bdAlmaAstrologia;
 
+/*    ON DELETE CASCADE
+*/
+
 CREATE TABLE sistemaPlanetario( 
     id INT AUTO_INCREMENT,
     nombre VARCHAR (20),
