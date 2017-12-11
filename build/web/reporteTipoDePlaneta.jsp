@@ -14,15 +14,22 @@
         List<TipoDePlaneta> repTipoDePlaneta = d.getTipoDePlaneta();
     %>
     <body>
-        <h1>Reporte Tipo De Cuerpo Menor</h1>
-        <%
-            for (TipoDePlaneta tdp : repTipoDePlaneta) {
-                out.println("<tr>");
-                out.println("<td>" + tdp.getId() + "</td>");
-                out.println("<td>" + tdp.getNombre() + "</td>");
-                out.println("</tr>");
-            }
-        %>
+        <h1>Reporte Tipo De Planeta</h1>
+        <table border = '1'>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+            <%
+                for (TipoDePlaneta tdp : repTipoDePlaneta) {
+                    out.println("<tr>");
+                    out.println("<td>" + tdp.getId() + "</td>");
+                    out.println("<td>" + tdp.getNombre() + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </table>
+
         <br>
         <a href="menu.jsp">Retornar</a>
         <br>

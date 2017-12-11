@@ -33,6 +33,6 @@
         <br>
         <a href="reporteCuerpoCeleste.jsp">Reporte Cuerpo Celeste</a>
         <br>
-        <h2>Actualizar / Eliminar</h2>
+        <h2>Busqueda / Actualizar / Eliminar</h2>
     </body>
 </html>

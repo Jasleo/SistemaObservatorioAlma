@@ -12,23 +12,33 @@
         <%
             Data d = new Data();
             List<Satelite> repSatelite = d.getSatelite();
-            
-            
+
+
         %>
         <h1>Satelite</h1>
-        <%
-            for (Satelite sat : repSatelite) {
-                out.println("<tr>");
-                out.println("<td>" + sat.getId() + "</td>");
-                out.println("<td>" + sat.getNombre()+ "</td>");
-                out.println("<td>" + sat.getDiametro()+ "</td>");
-                out.println("<td>" + sat.getPeridoOrbitalDia()+ "</td>");
-                out.println("<td>" + sat.getPeridoOrbitalHora()+ "</td>");
-                out.println("<td>" + sat.getPeridoOrbitalMInuto()+ "</td>");
-                out.println("<td>" + d.getPlanetaBy(String.valueOf(sat.getIdPlanetaFK())) + "</td>");
-                out.println("</tr>");
-            }
-        %>
+        <table border = '1'>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Diametro</th>
+                <th>Periodo Orbital Dia</th>
+                <th>Periodo Orbital Hora</th>
+                <th>Periodo Orbital Minuto</th>
+                <th>Planeta</th>
+            </tr>
+            <%            for (Satelite sat : repSatelite) {
+                    out.println("<tr>");
+                    out.println("<td>" + sat.getId() + "</td>");
+                    out.println("<td>" + sat.getNombre() + "</td>");
+                    out.println("<td>" + sat.getDiametro() + "</td>");
+                    out.println("<td>" + sat.getPeridoOrbitalDia() + "</td>");
+                    out.println("<td>" + sat.getPeridoOrbitalHora() + "</td>");
+                    out.println("<td>" + sat.getPeridoOrbitalMInuto() + "</td>");
+                    out.println("<td>" + d.getPlanetaBy(String.valueOf(sat.getIdPlanetaFK())) + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </table>
         <br>
         <a href="menu.jsp">Retornar</a>
         <br>

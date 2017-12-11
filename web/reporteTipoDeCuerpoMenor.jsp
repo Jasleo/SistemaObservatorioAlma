@@ -14,14 +14,20 @@
     %>
     <body>
         <h1>Reporte Tipo De Cuerpo Menor</h1>
-        <%
-            for (TipoDeCuerpoMenor tdcm : repTipoDeCuerpoMenor) {
-                out.println("<tr>");
-                out.println("<td>" + tdcm.getId() + "</td>");
-                out.println("<td>" + tdcm.getNombre() + "</td>");
-                out.println("</tr>");
-            }
-        %>
+        <table border = '1'>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+            <%
+                for (TipoDeCuerpoMenor tdcm : repTipoDeCuerpoMenor) {
+                    out.println("<tr>");
+                    out.println("<td>" + tdcm.getId() + "</td>");
+                    out.println("<td>" + tdcm.getNombre() + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </table>
         <br>
         <a href="menu.jsp">Retornar</a>
         <br>

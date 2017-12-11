@@ -14,15 +14,23 @@
     %>
     <body>
         <h1>Reporte Estrella</h1>
-        <%
-            for (Estrella cc : repEstrella) {
-                out.println("<tr>");
-                out.println("<td>" + cc.getId() + "</td>");
-                out.println("<td>" + cc.getNombre() + "</td>");
-                out.println("<td>" + d.getSistemaPlanetarioBy(String.valueOf(cc.getIdSistemaPlanetarioFK())) + "</td>");
-                out.println("</tr>");
-            }
-        %>
+        <table border = '1'>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Sistema Planetario</th>
+            </tr>
+            <%
+                for (Estrella cc : repEstrella) {
+                    out.println("<tr>");
+                    out.println("<td>" + cc.getId() + "</td>");
+                    out.println("<td>" + cc.getNombre() + "</td>");
+                    out.println("<td>" + d.getSistemaPlanetarioBy(String.valueOf(cc.getIdSistemaPlanetarioFK())) + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </table>
+
         <br>
         <a href="menu.jsp">Retornar</a>
         <br>

@@ -14,14 +14,20 @@
     %>
     <body>
         <h1>Reporte Sistema Planetario</h1>
-        <%
-            for (SistemaPlanetario sp : repSistemaPlanetario) {
-                out.println("<tr>");
-                out.println("<td>" + sp.getId() + "</td>");
-                out.println("<td>" + sp.getNombre() + "</td>");
-                out.println("</tr>");
-            }
-        %>
+        <table border = '1'>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+            <%
+                for (SistemaPlanetario sp : repSistemaPlanetario) {
+                    out.println("<tr>");
+                    out.println("<td>" + sp.getId() + "</td>");
+                    out.println("<td>" + sp.getNombre() + "</td>");
+                    out.println("</tr>");
+                }
+            %>
+        </table>
         <br>
         <a href="menu.jsp">Retornar</a>
         <br>
